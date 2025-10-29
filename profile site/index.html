@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Akito | ポートフォリオ</title>
+  <style>
+    /* リセット */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body,#app{height:100%}
+    body{font-family: Inter, 'Segoe UI', Roboto, 'Hiragino Kaku Gothic ProN', 'Noto Sans', sans-serif;background:#050507;color:#e6eef8;line-height:1.6}
+
+    /* 全体レイアウト */
+    .container{max-width:1000px;margin:40px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#00e6ff44,#0066ff22);display:flex;align-items:center;justify-content:center;font-weight:700;color:#00e6ff}
+    .name{font-size:1.25rem;font-weight:700}
+    nav a{color:#9fcfff;margin-left:12px;text-decoration:none;font-weight:600}
+
+    /* アクションレイアウト */
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:center;margin-top:36px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(100,180,255,0.06);padding:28px;border-radius:16px;backdrop-filter: blur(6px)}
+    .eyebrow{color:#6fbfff;font-weight:700;letter-spacing:1px}
+    h1{font-size:2rem;margin-top:8px}
+    p.lead{color:#cfe9ff;margin-top:12px}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,#00e6ff,#0066ff);color:#021223}
+
+    /* ロゴと一言のレイアウト */
+    .profile-img{width:100%;height:320px;border-radius:12px;background:linear-gradient(135deg,#001122, #002244);display:flex;align-items:center;justify-content:center;font-size:3rem;color:#00e6ff}
+    .meta{display:flex;gap:10px;flex-direction:column;margin-top:14px}
+    .meta div{font-weight:600;color:#cfe9ff}
+
+    /* スキル、資格レイアウト */
+    section{margin-top:24px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .skill-list{display:flex;flex-wrap:wrap;gap:10px}
+    .skill{padding:8px 10px;border-radius:10px;background:linear-gradient(90deg,rgba(0,230,255,0.08),rgba(0,102,255,0.04));border:1px solid rgba(0,230,255,0.06);font-weight:700}
+    .cert-list{list-style:none;padding-left:0}
+    .cert-list li{padding:8px 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+
+    /* 目標レイアウト */
+    .goals p{margin-top:8px}
+
+    /* footerレイアウト */
+    footer{margin-top:40px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(10,10,12,0.4),transparent);display:flex;justify-content:space-between;align-items:center}
+
+    /* スマホ用レイアウト */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .profile-img{height:200px}
+      .grid{grid-template-columns:1fr}
+      .container{margin:20px;padding:18px}
+    }
+
+    /* 未来の文字を明るく */
+    .neon{color:#00e6ff;text-shadow:0 0 10px rgba(0,230,255,0.12),0 0 30px rgba(0,102,255,0.06);}
+  </style>
+</head>
+<body>
+  <div id="app" class="container">
+
+    <header>
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <div class="name">Akito</div>
+          <div style="font-size:0.85rem;color:#9fcfff">Profile site</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#certs">Certs</a>
+        <a href="#goals">Goals</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <!-- キャッチコピー -->
+        <div class="card fade-in" id="heroCard">
+          <div class="eyebrow">こんにちは、章翔です</div>
+          <h1>努力で<span class="neon">未来</span>を切り拓く大学生</h1>
+          <p class="lead">勉強を真剣に取り組み、アルバイトや資格取得にも全力。小さな積み重ねを大切に、確かな成長を目指しています。</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#projects">制作物を見る</a>
+          </div>
+
+          <!-- プロフィール -->
+          <div class="meta" style="margin-top:18px">
+            <div>大学: 北海道情報大学 通信教育部 経営情報学科</div>
+            <div>趣味: 筋トレ、ゲーム、イラスト作成</div>
+            <div>興味職種: Webエンジニア / システムエンジニア / アプリケーションエンジニア</div>
+          </div>
+        </div>
+
+        <!-- 写真付き一言 -->
+        <aside class="card fade-in" id="profileCard">
+          <div class="profile-img">A</div>
+          <div style="margin-top:12px">
+            <strong>継続は力なり</strong>
+            <div style="color:#bfe8ff;margin-top:8px">“継続”を大事にしています。きついことや嫌いなことでも継続すれば、自分の力になっていくと思っています。</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <strong>連絡</strong>
+            <div style="margin-top:8px;color:#9fcfff">メール: <span style="font-weight:700;color:#cfe9ff">tana.aki.20041025@gmail.com</span></div>
+            <div style="margin-top:6px;color:#9fcfff">GitHub: <a href="https://github.com/Akito-15" style="color:#9fcfff;font-weight:700">github.com/Akito-15</a></div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- 自己紹介 -->
+      <section id="about" class="fade-in">
+        <div class="card">
+          <h2>About — 自己紹介</h2>
+          <p style="margin-top:10px;color:#cfe9ff">北海道情報 通信教育部 3年。得意な科目は数学とプログラム、最近はReactやNext.jsを使ってWebアプリの制作に取り組んでいます。</p>
+          <p style="margin-top:10px;color:#cfe9ff">趣味は筋トレとゲームです。筋トレは週6日しており、ダンベルは+10kg、懸垂は倍のセットできるようになりました。</p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <!-- スキル -->
+        <div id="skills" class="card fade-in">
+          <h3>Skills — スキル</h3>
+          <div style="margin-top:12px">
+            <strong>扱える言語</strong>
+            <div class="skill-list" style="margin-top:10px">
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">JavaScript</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <strong>学んだ / 触ったことがある言語</strong>
+            <div class="skill-list" style="margin-top:10px">
+              <div class="skill">HTML</div>
+              <div class="skill">Python</div>
+              <div class="skill">CSS</div>
+              <div class="skill">JavaScript</div>
+              <div class="skill">Django</div>
+              <div class="skill">MySQL</div>
+              <div class="skill">C#</div>
+              <div class="skill">Java</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 制作物 -->
+        <div id="projects" class="card fade-in">
+          <h3>Projects — 制作物</h3>
+          <div style="margin-top:12px">
+            <strong>TODOリストアプリ製作中</strong>
+            <div style="color:#bfe8ff;margin-top:8px">製作中</div>
+          </div>
+
+          <div style="margin-top:10px">
+            <strong>製作中</strong>
+            <div style="color:#bfe8ff;margin-top:8px">製作中</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 資格 -->
+      <section id="certs" class="fade-in">
+        <div class="card">
+          <h3>Certifications — 取得資格</h3>
+          <ul class="cert-list" style="margin-top:12px">
+            <li>基本情報技術者試験</li>
+            <li>情報セキュリティーマネジメント試験</li>
+            <li>普通自動車第一種免許</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 目標 -->
+      <section id="goals" class="fade-in">
+        <div class="card goals">
+          <h3>Goals — 将来の目標</h3>
+          <p style="margin-top:8px;color:#cfe9ff">将来はIT業界で起業し、自分のアイデアを形にすることを目指しています。まずは企業で経験を積み、技術力と発想力の両方を伸ばしたいです。変化の早い業界の中で常に学び続け、新しい価値を生み出せる人になりたいと考えています。</p>
+        </div>
+      </section>
+
+      <footer id="contact" class="fade-in">
+        <div>
+          <strong>Contact</strong>
+          <div style="margin-top:6px;color:#9fcfff">メール: <span style="font-weight:700;color:#cfe9ff">tana.aki.20041025@gmail.com</span></div>
+          <div style="margin-top:6px;color:#9fcfff">GitHub: <a href="https://github.com/Akito-15" style="color:#9fcfff">github.com/Akito-15</a></div>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+</body>
+</html>
